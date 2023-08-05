@@ -1,2 +1,2 @@
 # netflix-clone
-Full Stack project using NextJS, TailwindCSS, MongoDB and NextAuth
+Full Stack project built with NextJS, TailwindCSS, MongoDB and NextAuth
