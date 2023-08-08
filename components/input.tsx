@@ -1,7 +1,14 @@
-const Input = () => {
+import { InputProps } from "@/models/InputProps";
+import React from "react";
+
+const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
   return (
     <div className="relative">
       <input
+        id={id}
+        onChange={onChange}
+        value={value}
+        type={type}
         className="
   block
   rounded-md
@@ -21,7 +28,7 @@ bg-neutral-700
         placeholder=" "
       />
       <label
-        htmlFor="email"
+        htmlFor={id}
         className="
         absolute 
         text-md
@@ -40,7 +47,7 @@ bg-neutral-700
         peer-focus:-translate-y-3
       "
       >
-        Email ou número de telefone
+        {label}
       </label>
     </div>
   );
