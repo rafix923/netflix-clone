@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
@@ -25,6 +26,12 @@ const Auth = () => {
                 id="userIdent"
                 onChange={(event: any) => setUserIdent(event.target.value)}
                 value={userIdent}
+              />
+              <Input
+                label="Senha"
+                id="password"
+                onChange={(event: any) => setPassword(event.target.value)}
+                value={password}
               />
             </div>
           </div>
