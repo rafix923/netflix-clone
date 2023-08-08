@@ -1,7 +1,10 @@
 import Input from "@/components/input";
 import Image from "next/image";
+import { useState } from "react";
 
 const Auth = () => {
+  const [userIdent, setUserIdent] = useState("");
+
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
       <div className="bg-black w-full h-full bg-opacity-50">
@@ -19,9 +22,9 @@ const Auth = () => {
             <div>
               <Input
                 label="Email ou número de telefone"
-                id="email"
-                onChange={undefined}
-                value=" "
+                id="userIdent"
+                onChange={(event: any) => setUserIdent(event.target.value)}
+                value={userIdent}
               />
             </div>
           </div>
