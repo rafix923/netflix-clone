@@ -20,7 +20,7 @@ const Auth = () => {
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
             <h2 className="text-white text-4xl mb-8 font-semibold">Entrar</h2>
-            <div>
+            <div className="flex flex-col gap-4">
               <Input
                 label="Email ou número de telefone"
                 id="userIdent"
