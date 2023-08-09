@@ -18,7 +18,7 @@ const Auth = () => {
           />
         </nav>
         <div className="flex justify-center">
-          <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+          <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md">
             <h2 className="text-white text-4xl mb-8 font-semibold">Entrar</h2>
             <div className="flex flex-col gap-4">
               <Input
@@ -42,6 +42,22 @@ const Auth = () => {
             >
               Entrar
             </button>
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="checkbox"
+                className="mr-2 my-4 rounded bg-red-500"
+              />
+              <div className="flex gap-10">
+                <label
+                  htmlFor="checkbox"
+                  style={{ color: "rgb(156, 153, 153)" }}
+                >
+                  Lembre-se de mim
+                </label>
+                <p style={{ color: "rgb(156, 153, 153)" }}>Precisa de ajuda?</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
