@@ -48,7 +48,7 @@ const Auth = () => {
                 id="checkbox"
                 className="mr-2 my-4 rounded bg-red-500"
               />
-              <div className="flex gap-10">
+              <div className="flex gap-20">
                 <label
                   htmlFor="checkbox"
                   style={{ color: "rgb(156, 153, 153)" }}
@@ -57,6 +57,30 @@ const Auth = () => {
                 </label>
                 <p style={{ color: "rgb(156, 153, 153)" }}>Precisa de ajuda?</p>
               </div>
+            </div>
+            <div className="mt-12">
+              <p
+                className="text-lg font-semibold"
+                style={{ color: "rgb(115, 115, 115)" }}
+              >
+                Novo por aqui?
+                <span className="text-white ml-1 text-xl font-normal">
+                  <a href="#" className="hover:underline">
+                    Assine agora
+                  </a>
+                </span>
+                .
+              </p>
+              <p
+                style={{ color: "rgb(115, 115, 115)" }}
+                className=" mt-2.5 leading-tight pb-32"
+              >
+                Esta página é protegida pelo Google reCAPTCHA
+                <br /> para garantir que você não é um robô.
+                <a href="#" className="ml-1 text-blue-500 hover:underline">
+                  Saiba mais.
+                </a>
+              </p>
             </div>
           </div>
         </div>
