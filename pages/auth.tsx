@@ -6,7 +6,7 @@ const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
-  const [username, setUserName] = useState("");
+  const [userName, setUserName] = useState("");
 
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
@@ -31,6 +31,12 @@ const Auth = () => {
               {variant === "login" ? "Entrar" : "Assine agora"}
             </h2>
             <div className="flex flex-col gap-4">
+              <Input
+                label="Nome do usuário"
+                id="userName"
+                onChange={(event: any) => setUserName(event.target.value)}
+                value={userName}
+              />
               <Input
                 label="Email ou número de telefone"
                 id="userIdent"
