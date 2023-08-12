@@ -87,7 +87,7 @@ const Auth = () => {
                 id="checkbox"
                 className="mr-2 my-4 rounded bg-red-500"
               />
-              <div className="flex gap-22">
+              <div className="flex gap-24">
                 <label
                   htmlFor="checkbox"
                   style={{ color: "rgb(156, 153, 153)" }}
