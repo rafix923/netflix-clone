@@ -6,6 +6,7 @@ const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
+  const [username, setUserName] = useState("");
 
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
