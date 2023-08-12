@@ -1,10 +1,17 @@
 import Input from "@/components/input";
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
+  const [variant, setVariant] = useState("login");
+
+  const toggleVariant = useCallback(() => {
+    setVariant((currentVariant) =>
+      currentVariant === "login" ? "register" : "login"
+    );
+  }, []);
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
@@ -19,7 +26,9 @@ const Auth = () => {
         </nav>
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 rounded-md">
-            <h2 className="text-white text-4xl mb-8 font-semibold">Entrar</h2>
+            <h2 className="text-white text-4xl mb-8 font-semibold">
+              {variant === "login" ? "Entrar" : "Assine agora"}
+            </h2>
             <div className="flex flex-col gap-4">
               <Input
                 label="Email ou número de telefone"
@@ -48,7 +57,7 @@ const Auth = () => {
                 id="checkbox"
                 className="mr-2 my-4 rounded bg-red-500"
               />
-              <div className="flex gap-20">
+              <div className="flex gap-22">
                 <label
                   htmlFor="checkbox"
                   style={{ color: "rgb(156, 153, 153)" }}
@@ -64,9 +73,13 @@ const Auth = () => {
                 style={{ color: "rgb(115, 115, 115)" }}
               >
                 Novo por aqui?
-                <span className="text-white ml-1 text-xl font-normal">
+                <span
+                  onClick={toggleVariant}
+                  className="text-white ml-1 text-xl font-normal"
+                >
                   <a href="#" className="hover:underline">
                     Assine agora
+                    {/* Create an account */}
                   </a>
                 </span>
                 .
