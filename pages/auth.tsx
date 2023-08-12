@@ -49,7 +49,7 @@ const Auth = () => {
               type="submit"
               onClick={() => {}}
             >
-              Entrar
+              {variant === "login" ? "Entrar" : "Criar Conta"}
             </button>
             <div className="flex items-center">
               <input
