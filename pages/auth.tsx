@@ -32,30 +32,46 @@ const Auth = () => {
               {variant === "login" ? "Entrar" : "Assine agora"}
             </h2>
             <div className="flex flex-col gap-4">
-              <Input
-                label="Nome do usuário"
-                id="userName"
-                onChange={(event: any) => setUserName(event.target.value)}
-                value={userName}
-              />
-              <Input
-                label="Email"
-                id="email"
-                onChange={(event: any) => setEmail(event.target.value)}
-                value={email}
-              />
-              <Input
-                label="Email ou número de telefone"
-                id="userIdent"
-                onChange={(event: any) => setUserIdent(event.target.value)}
-                value={userIdent}
-              />
-              <Input
-                label="Senha"
-                id="password"
-                onChange={(event: any) => setPassword(event.target.value)}
-                value={password}
-              />
+              {variant === "register" && (
+                <Input
+                  label="Nome do usuário"
+                  id="userName"
+                  onChange={(event: any) => setUserName(event.target.value)}
+                  value={userName}
+                />
+              )}
+              {variant !== "login" && (
+                <>
+                  <Input
+                    label="Email"
+                    id="email"
+                    onChange={(event: any) => setEmail(event.target.value)}
+                    value={email}
+                  />
+                  <Input
+                    label="Senha"
+                    id="password"
+                    onChange={(event: any) => setPassword(event.target.value)}
+                    value={password}
+                  />
+                </>
+              )}
+              {variant === "login" && (
+                <>
+                  <Input
+                    label="Email ou número de telefone"
+                    id="userIdent"
+                    onChange={(event: any) => setUserIdent(event.target.value)}
+                    value={userIdent}
+                  />
+                  <Input
+                    label="Senha"
+                    id="password"
+                    onChange={(event: any) => setPassword(event.target.value)}
+                    value={password}
+                  />
+                </>
+              )}
             </div>
             <button
               style={{ backgroundColor: "rgb(229, 9, 20)" }}
@@ -93,7 +109,6 @@ const Auth = () => {
                 >
                   <a href="#" className="hover:underline">
                     Assine agora
-                    {/* Create an account */}
                   </a>
                 </span>
                 .
