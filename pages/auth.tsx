@@ -7,6 +7,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
   const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
 
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
@@ -36,6 +37,12 @@ const Auth = () => {
                 id="userName"
                 onChange={(event: any) => setUserName(event.target.value)}
                 value={userName}
+              />
+              <Input
+                label="Email"
+                id="email"
+                onChange={(event: any) => setEmail(event.target.value)}
+                value={email}
               />
               <Input
                 label="Email ou número de telefone"
