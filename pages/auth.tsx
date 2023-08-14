@@ -9,6 +9,8 @@ const Auth = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
+  // Função para alternar entre os modos de "login" e "register"
+  // A função utiliza o hook useCallback para melhorar a performance e evitar recriações desnecessárias da função durante as renderizações.
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
       currentVariant === "login" ? "register" : "login"
