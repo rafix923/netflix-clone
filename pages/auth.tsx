@@ -1,4 +1,5 @@
 import Input from "@/components/input";
+import axios from "axios";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 
@@ -16,6 +17,18 @@ const Auth = () => {
       currentVariant === "login" ? "register" : "login"
     );
   }, []);
+
+  const register = useCallback(async () => {
+    try {
+      await axios.post("/api/register", {
+        email,
+        name,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
