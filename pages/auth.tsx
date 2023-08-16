@@ -7,7 +7,7 @@ const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   // Função para alternar entre os modos de "login" e "register"
@@ -28,7 +28,7 @@ const Auth = () => {
     } catch (error) {
       console.log(error);
     }
-  });
+  }, [email, name, password]);
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
@@ -50,9 +50,9 @@ const Auth = () => {
               {variant === "register" && (
                 <Input
                   label="Nome do usuário"
-                  id="userName"
-                  onChange={(event: any) => setUserName(event.target.value)}
-                  value={userName}
+                  id="name"
+                  onChange={(event: any) => setName(event.target.value)}
+                  value={name}
                 />
               )}
               {variant !== "login" && (
