@@ -92,7 +92,7 @@ const Auth = () => {
               style={{ backgroundColor: "rgb(229, 9, 20)" }}
               className="w-full py-3 rounded-md mt-10 text-white font-semibold text-lg"
               type="submit"
-              onClick={() => {}}
+              onClick={register}
             >
               {variant === "login" ? "Entrar" : "Criar Conta"}
             </button>
