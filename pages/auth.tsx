@@ -1,4 +1,5 @@
 import Input from "@/components/input";
+import axios from "axios";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 
@@ -6,14 +7,28 @@ const Auth = () => {
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  // Função para alternar entre os modos de "login" e "register"
+  // A função utiliza o hook useCallback para melhorar a performance e evitar recriações desnecessárias da função durante as renderizações.
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) =>
       currentVariant === "login" ? "register" : "login"
     );
   }, []);
+
+  const register = useCallback(async () => {
+    try {
+      await axios.post("/api/register", {
+        email,
+        name,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, [email, name, password]);
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-auto">
@@ -35,9 +50,9 @@ const Auth = () => {
               {variant === "register" && (
                 <Input
                   label="Nome do usuário"
-                  id="userName"
-                  onChange={(event: any) => setUserName(event.target.value)}
-                  value={userName}
+                  id="name"
+                  onChange={(event: any) => setName(event.target.value)}
+                  value={name}
                 />
               )}
               {variant !== "login" && (
@@ -77,7 +92,7 @@ const Auth = () => {
               style={{ backgroundColor: "rgb(229, 9, 20)" }}
               className="w-full py-3 rounded-md mt-10 text-white font-semibold text-lg"
               type="submit"
-              onClick={() => {}}
+              onClick={register}
             >
               {variant === "login" ? "Entrar" : "Criar Conta"}
             </button>
