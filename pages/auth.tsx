@@ -2,11 +2,9 @@ import Input from "@/components/input";
 import axios from "axios";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 
 const Auth = () => {
-  const router = useRouter();
   const [userIdent, setUserIdent] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
