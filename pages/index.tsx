@@ -21,7 +21,12 @@ export default function Home() {
     <>
       <div className="bg-black h-screen w-screen text-red-600">
         <h1>Hello World!</h1>
-        <button className="bg-red-600 text-black h-10 w-60">Sair</button>
+        <button
+          className="bg-red-600 text-black h-10 w-60"
+          onClick={() => signOut()}
+        >
+          Sair
+        </button>
       </div>
     </>
   );
