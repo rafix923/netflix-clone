@@ -1,20 +1,22 @@
 import Image from "next/image";
-import NavbarItem from "./NavbarItem";
+import NavbarItem from "@/components/NavbarItem";
+import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = () => {
   return (
     <nav className="w-full fixed z-40">
       <div
-        className="px-4
-      md:px-16
-      py6
-      flex
-      flex-row
-      items-center
-      transition
-      duration-500
-      bg-zinc-900
-      bg-opacity-90
+        className="
+        px-4
+        md:px-16
+        py6
+        flex
+        flex-row
+        items-center
+        transition
+        duration-500
+        bg-zinc-900
+        bg-opacity-90
       "
       >
         <Image
@@ -29,14 +31,24 @@ const Navbar = () => {
         flex-row
         ml-8
         gap-7
-        hidden
         lg:flex
+        hidden
         "
         >
-          <NavbarItem />
+          <NavbarItem label="Início" />
+          <NavbarItem label="Séries" />
+          <NavbarItem label="Filmes" />
+          <NavbarItem label="Bombando" />
+          <NavbarItem label="Minha lista" />
+          <NavbarItem label="Navegar por idiomas" />
+        </div>
+
+        {/* Navbar para telas mobiles */}
+        <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+          <p className="text-white text-sm">Navegar</p>
+          <BsChevronDown className="text-white transiction" />
         </div>
       </div>
-      <h1>Navbar Component</h1>
     </nav>
   );
 };
