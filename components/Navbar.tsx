@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import NavbarItem from "@/components/NavbarItem";
 import MobileMenu from "@/components/MobileMenu";
-import { BsChevronDown } from "react-icons/bs";
+import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -59,6 +59,14 @@ const Navbar = () => {
           <p className="text-white text-sm">Navegar</p>
           <BsChevronDown className="text-white transiction" />
           <MobileMenu visible={showMobileMenu} />
+        </div>
+        <div className="flex flex-row ml-auto gap-7 items-center">
+          <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+            <BsSearch />
+          </div>
+          <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+            <BsBell />
+          </div>
         </div>
       </div>
     </nav>
