@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NavbarItem from "./NavbarItem";
 
 const Navbar = () => {
   return (
@@ -19,10 +20,21 @@ const Navbar = () => {
         <Image
           src="/images/logo.png"
           alt="Logo da Netflix com letras de cor vermelha"
-          width={300}
-          height={300}
+          width={80}
+          height={200}
           className="text-white"
         />
+        <div
+          className="
+        flex-row
+        ml-8
+        gap-7
+        hidden
+        lg:flex
+        "
+        >
+          <NavbarItem />
+        </div>
       </div>
       <h1>Navbar Component</h1>
     </nav>
