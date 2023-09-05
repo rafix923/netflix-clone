@@ -47,6 +47,7 @@ const Navbar = () => {
         <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
           <p className="text-white text-sm">Navegar</p>
           <BsChevronDown className="text-white transiction" />
+          <MobileMenu />
         </div>
       </div>
     </nav>
