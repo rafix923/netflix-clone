@@ -24,18 +24,22 @@ export default NextAuth({
             "Por favor, verifique se o email e a senha estão corretos."
           );
         }
+
         const user = await prismadb.user.findUnique({
           where: {
             email: credentials.email,
           },
         });
+
         if (!user || !user.hashedPassword) {
           throw new Error("Digite o email cadastrado");
         }
+
         const isCorrectPassword = await compare(
           credentials.password,
           user.hashedPassword
         );
+
         if (!isCorrectPassword) {
           throw new Error(
             "Senha incorreta. Por favor, digite a senha correta."
