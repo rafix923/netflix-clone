@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavbarItem from "@/components/NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
+import MobileMenu from "@/components/MobileMenu";
 
 const Navbar = () => {
   return (
