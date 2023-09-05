@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import NavbarItem from "@/components/NavbarItem";
 import MobileMenu from "@/components/MobileMenu";
+import AccountMenu from "@/components/AccountMenu";
 import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
 import Image from "next/image";
 
@@ -76,6 +77,8 @@ const Navbar = () => {
                 height={40}
               />
             </div>
+            <BsChevronDown className="text-white transiction" />
+            <AccountMenu />
           </div>
         </div>
       </div>
