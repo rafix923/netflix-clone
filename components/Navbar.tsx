@@ -78,7 +78,7 @@ const Navbar = () => {
               />
             </div>
             <BsChevronDown className="text-white transiction" />
-            <AccountMenu />
+            <AccountMenu visible />
           </div>
         </div>
       </div>
