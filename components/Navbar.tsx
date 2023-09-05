@@ -67,6 +67,16 @@ const Navbar = () => {
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <BsBell />
           </div>
+          <div className="flex flex-row items-center gap-2 cursor-pointer relative">
+            <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
+              <Image
+                src="/images/default-blue.png"
+                alt="Avatar do usuário logado"
+                width={40}
+                height={40}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </nav>
