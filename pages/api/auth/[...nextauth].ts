@@ -20,9 +20,7 @@ export default NextAuth({
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error(
-            "Por favor, verifique se o email e a senha estão corretos."
-          );
+          throw new Error("Pro favor, verifique o email se senha digitados");
         }
 
         const user = await prismadb.user.findUnique({
