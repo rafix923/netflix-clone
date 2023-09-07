@@ -1,6 +1,7 @@
 import React from "react";
 import { isEmpty } from "lodash";
 import { MovieListProps } from "@/models/MovieListProps";
+import MovieCard from "@/components/MovieCard";
 
 const MovieList: React.FC<MovieListProps> = ({ data, title }) => {
   if (isEmpty(data)) {
