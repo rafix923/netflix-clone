@@ -1,7 +1,7 @@
 import axios from "axios";
 import { FavoriteButtonProps } from "@/models/FavoriteButtonProps";
 import React, { useCallback, useMemo } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import useFavorites from "@/hooks/useFavorites";
 import useCurrentUser from "@/hooks/useCurrentUser";
 
@@ -31,6 +31,8 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
     });
   }, [currentUser, isFavorite, movieId, mutate]);
 
+  const Icon = isFavorite ? AiOutlineCheck : AiOutlinePlus;
+
   return (
     <div
       className="
@@ -48,7 +50,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
   hover:border-neutral-300  
   "
     >
-      <AiOutlinePlus className="text-white" size={25} />
+      <Icon className="text-white" size={25} />
     </div>
   );
 };
