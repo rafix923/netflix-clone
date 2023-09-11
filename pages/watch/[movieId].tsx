@@ -26,7 +26,7 @@ const Watch = () => {
       >
         <AiOutlineArrowLeft
           onClick={() => router.push("/")}
-          className="text-white"
+          className="text-white cursor-pointer"
           size={40}
         />
         <p className="text-white text-1xl md:text-3xl font-bold">
