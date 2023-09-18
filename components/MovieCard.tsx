@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { MovieCardProps } from "@/models/MovieCardProps";
 import React from "react";
-import { BsFillPlayFill } from "react-icons/bs";
 import FavoriteButton from "./FavoriteButton";
 import { useRouter } from "next/router";
+import { BsFillPlayFill } from "react-icons/bs";
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();

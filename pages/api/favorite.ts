@@ -22,6 +22,7 @@ export default async function handler(
         throw new Error("ID inválido");
       }
 
+      // Atualiza usuário
       const user = await prismadb.user.update({
         where: {
           email: currentUser.email || "",
@@ -35,6 +36,7 @@ export default async function handler(
 
       return res.status(200).json(user);
     }
+
     if (req.method === "DELETE") {
       const { currentUser } = await serverAuth(req);
       const { movieId } = req.body;
@@ -49,6 +51,7 @@ export default async function handler(
         throw new Error("ID inválido");
       }
 
+      // Atualiza lista de favoritos do usuário
       const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
 
       const updatedUser = await prismadb.user.update({
